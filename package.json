@@ -1,0 +1,40 @@
+{
+  "name": "LTDA",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "type": "module",
+  "files": [
+    "lib/**/*"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Lokilife",
+    "url": "https://github.com/Lokilife"
+  },
+  "keywords": ["ltda", "typescript", "ts", "discord", "api", "bot"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lokilife/LTDA.git"
+  },
+  "scripts": {
+    "start:dev": "node --experimental-loader esbuild-node-loader typings/index.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "build": "yarn tsc",
+    "prepare": "yarn build",
+    "preversion": "yarn format",
+    "version": "yarn format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "dependencies": {
+    "node-fetch": "^3.0.0",
+    "ws": "^8.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.1",
+    "@types/ws": "^8.2.0",
+    "esbuild-node-loader": "^0.6.3",
+    "prettier": "^2.5.0",
+    "typescript": "^4.4.4"
+  }
+}
