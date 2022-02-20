@@ -77,3 +77,6 @@ Thx.
 - Made API router
 - First steps of caching info received from events
 - First steps of wrapping WebSocketShard to Client class
+
+## License
+[BSD 3-Clause](LICENSE)
