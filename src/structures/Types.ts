@@ -1,1 +1,65 @@
+import Message from "./Message"
+import User from "./User"
+
 export type Awaited<T> = Promise<T> | T
+export type EventNames = keyof ClientEvents
+export type Snowflake = `${bigint}`
+export interface ClientEvents {
+    'ready': () => Awaited<void>
+    'channelCreate': (channel: any) => Awaited<void>
+    'channelUpdate': (oldChannel: any, newChannel: any) => Awaited<void>
+    'channelDelete': (channel: any) => Awaited<void>
+    'threadCreate': (thread: any) => Awaited<void>
+    'threadUpdate': (oldThread: any, newThread: any) => Awaited<void>
+    'threadDelete': (thread: any) => Awaited<void>
+    'threadListSync': (threadListSyncEvent: any) => Awaited<void>
+    'threadMemberUpdate': (oldThreadMember: any, newThreadMember: any) => Awaited<void>
+    'threadMembersUpdate': (threadMember: any) => Awaited<void>
+    'channelPinsUpdate': (channelPinsUpdateEvent: any) => Awaited<void>
+    'guildCreate': (guild: any) => Awaited<void>
+    'guildUpdate': (oldGuild: any, newGuild: any) => Awaited<void>
+    'guildDelete': (guild: any) => Awaited<void>
+    'guildBanAdd': (member: any) => Awaited<void>
+    'guildBanRemove': (member: any) => Awaited<void>
+    'guildEmojisUpdate': (guild: any, emojis: any) => Awaited<void>
+    'guildStickersUpdate': (guild: any, stickers: any) => Awaited<void>
+    'guildIntegrationsUpdate': (guild: any) => Awaited<void>
+    'guildMemberAdd': (member: any) => Awaited<void>
+    'guildMemberRemove': (member: any) => Awaited<void>
+    'guildMemberUpdate': (oldMember: any, newMember: any) => Awaited<void>
+    'guildMembersChunk': (guildMembersChunkEvent: any) => Awaited<void>
+    'guildRoleCreate': (role: any) => Awaited<void>
+    'guildRoleUpdate': (oldRole: any, newRole: any) => Awaited<void>
+    'guildRoleDelete': (role: any) => Awaited<void>
+    'guildSheduledEventCreate': (scheduledEvent: any) => Awaited<void>
+    'guildScheduledEventUpdate': (oldScheduledEvent: any, newScheduledEvent: any) => Awaited<void>
+    'guildScheduledEventDelete': (scheduledEvent: any) => Awaited<void>
+    'guildScheduledEventUserAdd': (member: any) => Awaited<void>
+    'guildScheduledEventUserRemove': (member: any) => Awaited<void>
+    'integrationCreate': (integration: any) => Awaited<void>
+    'integrationUpdate': (oldIntegration: any, newIntegration: any) => Awaited<void>
+    'integrationDelete': (integration: any) => Awaited<void>
+    'inviteCreate': (invite: any) => Awaited<void>
+    'inviteUpdate': (oldInvite: any, newInvite: any) => Awaited<void>
+    'inviteDelete': (invite: any) => Awaited<void>
+    'message': (message: Message) => Awaited<void>
+    'messageEdit': (oldMessage: Message, newMessage: Message) => Awaited<void>
+    'messageDelete': (message: Message) => Awaited<void>
+    'messageBulkDelete': (messages: Array<Message>) => Awaited<void>
+    'messageReactionAdd': (reaction: any) => Awaited<void>
+    'messageReactionRemove': (reaction: any) => Awaited<void>
+    'messageReactionRemoveAll': (message: Message) => Awaited<void>
+    'messageReactionRemoveEmoji': (message: Message, emoji: any) => Awaited<void>
+    'presenceUpdate': (presence: any) => Awaited<void>
+    'typingStart': (typing: any) => Awaited<void>
+    'userUpdate': (oldUser: User, newUser: User) => Awaited<void>
+    'voiceStateUpdate': (oldState: any, newState: any) => Awaited<void>
+    'voiceServerUpdate': (guild: any) => Awaited<void>
+    'webhooksUpdate': (webhookUpdateEvent: any) => Awaited<void>
+    'interaction': (interaction: any) => Awaited<void>
+    'stageInstanceCreate': (stage: any) => Awaited<void>
+    'stateInstanceUpdate': (oldStage: any, newStage: any) => Awaited<void>
+    'stateInstanceDelete': (stage: any) => Awaited<void>
+    'debug': (...args: any) => Awaited<void>,
+    'payload': (payload: any) => Awaited<void>,
+}

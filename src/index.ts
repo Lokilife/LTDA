@@ -1,2 +1,2 @@
-export { default as Client } from './structures/client/websocket/WebSocket.js'
+export { default as Client } from './client/websocket/WebSocketShard.js'
 export * from './structures/Types.js'

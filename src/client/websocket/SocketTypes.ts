@@ -1,18 +1,18 @@
-import { Awaited } from './Types'
+import { Awaited } from '../../structures/Types'
 
 export interface Payload {
   /**
    * Operation Code
    */
-  op: number
+  op?: number
   /**
    * Packet data
    */
-  d: any | null
+  d?: any | null
   /**
    * Packet data type
    */
-  t: string
+  t?: string
 }
 export interface WebSocketEvents {
   debug: (content: any) => Awaited<void>
